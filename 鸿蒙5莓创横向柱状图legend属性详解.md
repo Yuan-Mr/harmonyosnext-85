@@ -1,285 +1,294 @@
-大家好，欢迎回来鸿蒙5莓创图表组件的专场，我们这一期来讲解组合图组件中legend属性的详细用法。legend（图例）是图表中非常重要的组成部分，它帮助用户理解图表中不同颜色或形状所代表的数据系列。下面我们将全面解析legend的各个属性及其用法。
+### Hello and welcome back to our special session on HarmonyOS 5 Berry Creative chart components. In this episode, we'll explore the detailed usage of the **legend** property in combination charts. The legend is a crucial component that helps users identify data series represented by different colors or shapes. Let's dive into each legend property and its applications.  
 
-## 1. show - 是否显示图例
 
-作用：控制是否显示图例组件 类型：Boolean 默认值：true 可选值：true | false 场景：当需要隐藏图例时设置为false
+### 1. `show` - Toggle Legend Visibility  
+**Function**: Controls whether the legend is displayed.  
+**Type**: Boolean  
+**Default**: `true`  
+**Options**: `true` | `false`  
+**Scenario**: Hide the legend when unnecessary.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  show: false  // 隐藏图例
+  show: false  // Hide the legend
 }
-```
+```  
 
-## 2. orient - 图例的方向
 
-作用：设置图例的排列方向 类型：String 默认值：'horizontal' 可选值：'horizontal' | 'vertical' 场景：水平排列适合较少的图例项，垂直排列适合较多的图例项
+### 2. `orient` - Legend Orientation  
+**Function**: Sets the layout direction of legend items.  
+**Type**: String  
+**Default**: `'horizontal'`  
+**Options**: `'horizontal'` | `'vertical'`  
+**Scenario**: Use `vertical` for long legend lists.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  orient: 'vertical'  // 垂直排列图例
+  orient: 'vertical'  // Vertical layout
 }
-```
+```  
 
-## 3. left/right/top/bottom - 图例位置
 
-作用：控制图例在图表中的位置 类型：String | Number 默认值：'auto' 可选值：'auto' | '10%' | 10（像素值） 场景：精确控制图例位置时使用，百分比相对于图表容器
+### 3. `left`/`right`/`top`/`bottom` - Legend Position  
+**Function**: Positions the legend within the chart.  
+**Type**: String | Number  
+**Default**: `'auto'`  
+**Options**: `'auto'`, percentage (e.g., `'10%'`), or pixel value (e.g., `20`).  
+**Scenario**: Precise positioning relative to the chart container.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  left: '10%',   // 距离左侧10%
-  top: 20,       // 距离顶部20像素
-  right: 'auto', // 右侧自动
-  bottom: '5%'   // 距离底部5%
+  left: '10%',   // 10% from left
+  top: 20,       // 20px from top
+  right: 'auto', // Auto-position right
+  bottom: '5%'   // 5% from bottom
 }
-```
+```  
 
-## 4. icon - 图例项的图标形状
 
-作用：设置图例项的图标形状 类型：String 默认值：'roundRect' 可选值：'rect' | 'circle' | 'roundRect' 场景：根据图表风格选择合适的图标形状
+### 4. `icon` - Legend Item Shape  
+**Function**: Sets the icon shape for legend items.  
+**Type**: String  
+**Default**: `'roundRect'`  
+**Options**: `'rect'` | `'circle'` | `'roundRect'`  
+**Scenario**: Match icon style to chart design.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  icon: 'circle'  // 使用圆形图标
+  icon: 'circle'  // Use circular icons
 }
-```
+```  
 
-## 5. iconRadian - 图例图标的圆角
 
-作用：设置圆角矩形的圆角大小（仅当icon为'roundRect'时有效） 类型：Number 默认值：2 场景：调整圆角矩形的圆角程度
+### 5. `iconRadian` - Icon Corner Radius  
+**Function**: Sets the corner radius for rounded rectangles (only for `icon: 'roundRect'`).  
+**Type**: Number  
+**Default**: 2  
+**Scenario**: Adjust corner smoothness.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
   icon: 'roundRect',
-  iconRadian: 5  // 更大的圆角
+  iconRadian: 5  // Larger rounded corners
 }
-```
+```  
 
-## 6. itemGap - 图例项之间的间距
 
-作用：设置图例项之间的间隔距离 类型：Number 默认值：10 场景：调整图例项之间的紧凑程度
+### 6. `itemGap` - Spacing Between Items  
+**Function**: Sets the gap between legend items.  
+**Type**: Number  
+**Default**: 10  
+**Scenario**: Control item density.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  itemGap: 20  // 更大的间距
+  itemGap: 20  // Increased spacing
 }
-```
+```  
 
-## 7. itemTextGap - 图形与文本的距离
 
-作用：设置图例图标与文本之间的距离 类型：Number 默认值：5 场景：调整图标与文本的间距
+### 7. `itemTextGap` - Icon-Text Spacing  
+**Function**: Sets the gap between the icon and text.  
+**Type**: Number  
+**Default**: 5  
+**Scenario**: Improve readability.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  itemTextGap: 8  // 更大的间距
+  itemTextGap: 8  // Larger gap
 }
-```
+```  
 
-## 8. align - 图例标记和文本的对齐
 
-作用：设置纵向布局时图例标记和文本的对齐方式 类型：String 默认值：'auto' 可选值：'auto' | 'left' | 'right' 场景：控制纵向布局时的对齐方式
+### 8. `align` - Icon-Text Alignment  
+**Function**: Aligns icons and text in vertical layouts.  
+**Type**: String  
+**Default**: `'auto'`  
+**Options**: `'auto'` | `'left'` | `'right'`  
+**Scenario**: Control alignment in vertical legends.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
   orient: 'vertical',
-  align: 'right'  // 右对齐
+  align: 'right'  // Right-align items
 }
-```
+```  
 
-## 9. itemWidth/itemHeight - 图标尺寸
 
-作用：设置图例图标的宽度和高度 类型：Number 默认值：itemWidth=8, itemHeight=8 场景：调整图标大小以适应不同设计需求
+### 9. `itemWidth`/`itemHeight` - Icon Size  
+**Function**: Sets icon dimensions.  
+**Type**: Number  
+**Default**: `itemWidth=8`, `itemHeight=8`  
+**Scenario**: Resize icons for better visibility.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
   itemWidth: 12,
-  itemHeight: 12  // 更大的图标
+  itemHeight: 12  // Larger icons
 }
-```
+```  
 
-## 10. selectAble - 图例项是否可选
 
-作用：控制图例项是否可以被点击选择 类型：Boolean 默认值：true 场景：需要禁用图例交互时设置为false
+### 10. `selectAble` - Item Selection  
+**Function**: Enables/disables clicking legend items to toggle series visibility.  
+**Type**: Boolean  
+**Default**: `true`  
+**Scenario**: Disable interaction when needed.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  selectAble: false  // 禁用图例选择
+  selectAble: false  // Disable selection
 }
-```
+```  
 
-## 11. data - 图例数据
 
-作用：设置图例的数据内容 类型：Array 默认值：[] 场景：自定义图例内容时使用
+### 11. `data` - Legend Content  
+**Function**: Defines legend items.  
+**Type**: Array  
+**Default**: `[]`  
+**Scenario**: Customize legend labels.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  data: ['系列1', '系列2', '系列3']  // 自定义图例文本
+  data: ['Q1', 'Q2', 'Q3', 'Q4']  // Custom labels
 }
-```
+```  
 
-## 12. textStyle - 图例文字样式
 
-作用：设置图例文字的样式
+### 12. `textStyle` - Text Appearance  
+**Function**: Configures legend text style.  
 
-### 子属性详解：
+#### Sub-properties:  
+- **`fontFamily`**: Font family (default: `'sans-serif'`).  
+- **`fontWeight`**: Font weight (default: `'normal'`).  
+- **`fontSize`**: Font size (default: `30`).  
+- **`color`**: Text color (default: `'#333'`).  
+- **`formatter`**: Text formatting (default: `null`).  
 
-#### fontFamily - 字体
-
-作用：设置字体 类型：String 默认值：'sans-serif'
-
-#### fontWeight - 字重
-
-作用：设置字体粗细 类型：String 默认值：'normal'
-
-#### fontSize - 字号
-
-作用：设置字体大小 类型：Number 默认值：30
-
-#### color - 颜色
-
-作用：设置字体颜色 类型：String 默认值：'#333'
-
-#### formatter - 格式化
-
-作用：格式化图例文本 类型：String | Function 默认值：null 可选值：'{value}件' 或 格式化函数
-
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
   textStyle: {
     fontFamily: 'Arial',
     fontWeight: 'bold',
     fontSize: 14,
     color: '#666',
-    formatter: '{value}项'  // 添加单位
+    formatter: '{value} Items'  // Append unit
   }
 }
-```
+```  
 
-## 13. iconStyle - 图例图标样式
 
-作用：设置图例图标的样式 类型：Object 默认值：{} 场景：自定义图标样式
+### 13. `iconStyle` - Icon Appearance  
+**Function**: Customizes legend icon style.  
+**Type**: Object  
+**Default**: `{}`  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
   iconStyle: {
-    color: '#FF0000',  // 红色图标
-    borderColor: '#000',
-    borderWidth: 1
+    color: '#FF0000',      // Red icons
+    borderColor: '#000',   // Black border
+    borderWidth: 1         // 1px border
   }
 }
-```
+```  
 
-## 14. textUnselectedStyle - 未选中状态的文字样式
 
-作用：设置未选中状态的图例文字样式
+### 14. `textUnselectedStyle` - Unselected Text Style  
+**Function**: Configures text style for unselected items.  
 
-### 子属性详解：
+#### Sub-properties:  
+- **`fontFamily`**: Font family (default: `'sans-serif'`).  
+- **`fontSize`**: Font size (default: `30`).  
+- **`color`**: Text color (default: `'#999'`).  
 
-#### fontFamily - 字体
-
-类型：String 默认值：'sans-serif'
-
-#### fontSize - 字号
-
-类型：Number 默认值：30
-
-#### color - 颜色
-
-类型：String 默认值：'#999'
-
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
   textUnselectedStyle: {
     fontFamily: 'Arial',
     fontSize: 12,
-    color: '#CCC'  // 更浅的颜色
+    color: '#CCC'  // Lighter color
   }
 }
-```
+```  
 
-## 15. iconUnselectedStyle - 未选中状态的图标样式
 
-作用：设置未选中状态的图例图标样式 类型：Object 默认值：{color: '#999'} 场景：自定义未选中状态的图标外观
+### 15. `iconUnselectedStyle` - Unselected Icon Style  
+**Function**: Customizes icon style for unselected items.  
+**Type**: Object  
+**Default**: `{color: '#999'}`  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
   iconUnselectedStyle: {
-    color: '#DDD',  // 更浅的颜色
-    opacity: 0.5    // 半透明
+    color: '#DDD',   // Lighter color
+    opacity: 0.5     // Semi-transparent
   }
 }
-```
+```  
 
-## 16. rLevel - 图例渲染级别
 
-作用：设置图例的渲染优先级 类型：Number 默认值：20 场景：控制图例与其他组件的层叠关系
+### 16. `rLevel` - Render Priority  
+**Function**: Sets rendering order (z-index).  
+**Type**: Number  
+**Default**: 20  
+**Scenario**: Control layering with other components.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  rLevel: 30  // 提高渲染优先级
+  rLevel: 30  // Higher priority
 }
-```
+```  
 
-## 17. animationCurve - 图例动画曲线
 
-作用：设置图例动画的缓动曲线 类型：String 默认值：'easeOutCubic' 场景：调整图例交互时的动画效果
+### 17. `animationCurve` - Animation Easing  
+**Function**: Sets animation curve for state changes.  
+**Type**: String  
+**Default**: `'easeOutCubic'`  
+**Scenario**: Customize animation feel.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  animationCurve: 'linear'  // 线性动画
+  animationCurve: 'linear'  // Linear animation
 }
-```
+```  
 
-## 18. animationFrame - 图例动画帧数
 
-作用：设置图例动画的帧数 类型：Number 默认值：0 场景：控制动画流畅度，0表示不使用动画
+### 18. `animationFrame` - Animation Duration  
+**Function**: Sets animation duration (frames).  
+**Type**: Number  
+**Default**: 0 (no animation)  
+**Scenario**: Control animation smoothness.  
 
-完整代码示例：
-
-```
+**Example**:  
+```json
 legend: {
-  animationFrame: 30  // 使用30帧动画
+  animationFrame: 30  // 30-frame animation
 }
-```
+```  
 
-## 实际应用案例
 
-下面是一个完整的组合图配置示例，展示了legend属性的实际应用：
+### Practical Example  
+Here's a complete configuration demonstrating multiple legend properties:  
 
-```
+```json
 {
   legend: {
     show: true,
@@ -293,13 +302,13 @@ legend: {
     itemWidth: 12,
     itemHeight: 12,
     selectAble: true,
-    data: ['第一季度', '第二季度', '第三季度', '第四季度'],
+    data: ['Q1 Sales', 'Q2 Sales', 'Q3 Sales', 'Q4 Sales'],
     textStyle: {
       fontFamily: 'Microsoft YaHei',
       fontWeight: 'normal',
       fontSize: 12,
       color: '#333',
-      formatter: '{value}销售'
+      formatter: '{value} Sales'
     },
     iconStyle: {
       color: '#FFF',
@@ -317,10 +326,12 @@ legend: {
     animationCurve: 'easeOutQuad',
     animationFrame: 20
   },
-  // 其他图表配置...
+  // Other chart configurations...
 }
-```
+```  
 
-这个配置创建了一个水平居中的图例，使用圆角矩形图标，有自定义的文本格式和样式，并启用了平滑的动画效果。
+This setup creates a horizontally centered legend with rounded rectangles, custom text formatting, and smooth animations.  
 
-好，这期讲到这里就结束了，希望大家通过这篇文章能够全面掌握莓创图表组件中legend属性的使用方法，在实际开发中灵活运用这些属性创建出美观实用的图表图例。如果有任何问题，欢迎在评论区留言讨论！
+
+### Conclusion  
+That wraps up our guide to the `legend` property in Berry Creative charts! Use these properties to create intuitive and visually appealing legends. If you have questions, leave them in the comments. Happy coding! 📊
